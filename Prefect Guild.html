@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daham Pasal Prefect Guild – 2025</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue-dark: #003366;
+            --primary-blue-medium: #004080;
+            --accent-green: #16a085;
+            --text-light: #f4f4f4;
+            --text-dark: #333;
+            --card-bg: #ffffff;
+            --hover-light: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f4f7f6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary-blue-medium), var(--primary-blue-dark));
+            color: var(--text-light);
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23005090" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background-color: var(--primary-blue-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            display: block;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #eef3f2;
+        }
+
+        .section h2 {
+            font-size: 2.8rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-green);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* Leadership & Top Board Sections */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem auto;
+            border: 5px solid var(--accent-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0e0e0; /* Placeholder background */
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card h3 {
+            color: var(--primary-blue-dark);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h4 {
+            color: var(--accent-green);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .contact-info {
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 1rem;
+        }
+
+        /* Styles to hide upload/delete buttons universally */
+        .image-upload-wrapper,
+        .image-upload-label,
+        .image-upload-input,
+        .delete-image-btn,
+        .add-photo-card .image-upload-label, /* Specific to gallery add card */
+        .add-photo-card .image-upload-input {
+            display: none !important; /* Force hide these elements */
+        }
+
+
+        .image-preview-container {
+            margin-top: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 150px;
+            border-radius: 8px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+        }
+
+
+        /* Events Section */
+        #events ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #events ul li {
+            background-color: var(--card-bg);
+            margin-bottom: 1.2rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            transition: transform 0.2s ease;
+        }
+
+        #events ul li:hover {
+            transform: translateX(5px);
+        }
+
+        #events ul li span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue-dark);
+        }
+
+        #events ul li small {
+            font-size: 0.9rem;
+            color: #777;
+            margin-left: 1rem;
+        }
+
+        .event-photo-upload-area {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .event-photo-slot {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 0; /* No padding if image fills container */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* Make the event photo clickable */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .event-photo-slot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-photo-preview-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; /* Changed to column to stack image and label */
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            display: flex; /* Always display since images are pre-set */
+        }
+
+        .event-photo-preview {
+            max-width: 100%;
+            max-height: 160px; /* Adjusted height for label space */
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .event-photo-slot .event-label { /* New class for the event name label */
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            color: var(--primary-blue-dark);
+            font-weight: 600; /* Made text bold for better visibility */
+            text-align: center;
+            display: inline-block !important; /* Ensure it's always shown */
+            padding: 0 10px; /* Add some padding to the label */
+        }
+
+
+        /* Gallery Section */
+        #gallery-filter-buttons {
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background-color: var(--primary-blue-medium);
+            color: var(--text-light);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 0.5rem;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--primary-blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-green);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 3rem auto 0 auto;
+        }
+
+        .gallery-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease, display 0.5s ease;
+            /* Added opacity and display for filtering animation */
+        }
+
+        .gallery-item.hidden {
+            opacity: 0;
+            height: 0; /* Collapse element height when hidden */
+            overflow: hidden;
+            margin: 0 !important; /* Remove margin when hidden */
+            padding: 0 !important; /* Remove padding when hidden */
+            transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease, padding 0.5s ease;
+        }
+         .gallery-item:not(.hidden) {
+            display: block; /* Ensure it displays after filter */
+            height: auto; /* Reset height */
+            opacity: 1; /* Reset opacity */
+            margin: 0.5rem; /* Restore margin */
+            padding: 0; /* Restore padding */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .add-photo-card { /* This card is now purely decorative as upload functionality is removed */
+            background-color: #f0f5f4;
+            border: 2px dashed var(--accent-green);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            cursor: default; /* Change cursor as it's no longer clickable for upload */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .add-photo-card:hover {
+            background-color: #f0f5f4; /* Remove hover effect if not clickable */
+            border-color: var(--accent-green);
+        }
+
+
+        /* Contact Section */
+        #contact .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        #contact .contact-item {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        #contact .contact-item i {
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        #contact .contact-item h4 {
+            font-size: 1.5rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        #contact .contact-item p, #contact .contact-item a {
+            font-size: 1.1rem;
+            color: #555;
+            text-decoration: none;
+            display: block;
+        }
+
+        #contact .contact-item a:hover {
+            color: var(--accent-green);
+        }
+
+        .google-map {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--primary-blue-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            nav ul li {
+                margin: 0 0.8rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            #about p {
+                font-size: 1rem;
+            }
+
+            .card-container, .event-photo-upload-area, .gallery-grid, #contact .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-img-container {
+                width: 120px;
+                height: 120px;
+            }
+
+            .card h3 {
+                font-size: 1.5rem;
+            }
+
+            .card h4 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Font Awesome for Icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Daham Pasala Prefect Guild – 2025</h1>
+        <p>Discipline, Leadership, Service</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#leadership">Leadership & Guidance</a></li>
+            <li><a href="#top-board">Top Board</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>
+                The Sri Khemananda Daham Pasala Prefect Guild is dedicated to fostering an environment of discipline, leadership, and mindfulness among students. Comprising diligent and exemplary individuals, the Guild plays a pivotal role in upholding the values of the Daham Pasala, guiding younger students, and organizing various spiritual and community-focused activities. We believe in nurturing well-rounded individuals who embody service and responsibility.
+            </p>
+        </section>
+
+        <section id="leadership" class="section">
+            <h2>Leadership & Guidance</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img-container" id="leader1-img-container">
+                        <img src="https://via.placeholder.com/150/004080/FFFFFF?text=Ven.Th%20Photo" alt="Ven. Dammarakkitha Thero" class="card-img" id="leader1-img">
+                    </div>
+                    <h3>Ven. Dammarakkitha Thero</h3>
+                    <h4>Chief Incumbent & Patron</h4>
+                    <p>Sri Khemananda Daham Pasala</p>
+                    <p class="contact-info">Contact: +94 77 XXXXXXX</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-container" id="leader2-img-container">
+                        <img src="https://via.placeholder.com/150/003366/FFFFFF?text=Mrs.T%20Photo" alt="Mrs. Thakshila" class="card-img" id="leader2-img">
+                    </div>
+                    <h3>Mrs. Thakshila</h3>
+                    <h4>Teacher-in-Charge, Prefect Guild</h4>
+                    <p>Subject: Dhamma & Buddhist Civilization</p>
+                    <p>Experience: 15+ years guiding students</p>
+                    <p class="contact-info">Contact: +94 71 XXXXXXX</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-board" class="section">
+            <h2>Our Top Board</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img-container" id="prefect1-img-container">
+                        <img src="https://vid:\I Phone 7 pluse\Icloud\iCloud Photos 5\01c419ee-2502-4f61-b4f0-8b6138725312.jpg" alt="Sasmitha Denuwan" class="card-img" id="prefect1-img">
+                    </div>
+                    <h3>Sasmitha Denuwan</h3>
+                    <h4>Head Prefect – 2025</h4>
+                    <p>Leading with integrity and dedication.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-container" id="prefect2-img-container">
+                        <img src="https://via.placeholder.com/150/004080/FFFFFF?text=Amaya%20Photo" alt="Isali Randina" class="card-img" id="prefect2-img">
+                    </div>
+                    <h3>Isali Randina</h3>
+                    <h4>Head Prefect – 2025</h4>
+                    <p>.</p>
+                </div>
+            </div>
+			<div class="card-container">
+                <div class="card">
+                    <div class="card-img-container" id="prefect3-img-container">
+                        <img src="https://via.placeholder.com/150/16a085/FFFFFF?text=Enuka%20Photo" alt="Enuka Bimsara" class="card-img" id="prefect3-img">
+                    </div>
+                    <h3>Enuka Bimsara </h3>
+                    <h4>Deputy Head Prefect – 2025</h4>
+                    <p>Supporting the Guild with commitment.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-container" id="prefect4-img-container">
+                        <img src="https://via.placeholder.com/150/004080/FFFFFF?text=Sadil%20Photo" alt="Sadil" class="card-img" id="prefect4-img">
+                    </div>
+                    <h3>Sadil</h3>
+                    <h4>Top Board Member – 2025</h4>
+                    <p>Supporting the Guild with commitment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="section">
+            <h2>Upcoming Events 2025</h2>
+            <ul>
+                <li><span>Esala Poya Pinkama</span> <small>– July</small></li>
+                <li><span>Nikini Poya Pinkama</span> <small>– August</small></li>
+                <li><span>Binara poya pinkama</span> <small>– September</small></li>
+				<li><span>Daham Pasala Award Ceremony</span> <small>– September</small></li>
+				<li><span>wap Poya Pinkama</span> <small>– Octomber</small></li>
+				<li><span>Children’s Day</span> <small>– Octomber</small></li>
+				<li><span>Teacher’s Day</span> <small>– Octomber</small></li>
+				<li><span>Il poya pinkama</span> <small>– November</small></li>
+				<li><span>Uduwap poya pinkama</span> <small>– December</small></li>
+				<li><span>Prefect Guild Annual Trip </span> <small>– December</small></li>
+
+            </ul>
+
+            <div class="event-photo-upload-area">
+                <div class="event-photo-slot" data-event-name="Esala Poya Pinkama">
+                    <div class="event-photo-preview-container">
+                        <img class="event-photo-preview" src="https://via.placeholder.com/300x160/003366/FFFFFF?text=Esala%20Poya%20Pinkama" alt="Esala Poya Pinkama Photo">
+                        <span class="event-label">Esala Poya Pinkama</span>
+                    </div>
+                </div>
+
+                <div class="event-photo-slot" data-event-name="Nikini Poya Pinkama">
+                    <div class="event-photo-preview-container">
+                        <img class="event-photo-preview" src="https://via.placeholder.com/300x160/16a085/FFFFFF?text=Nikini%20Poya%20Pinkama" alt="Nikini Poya Pinkama Photo">
+                        <span class="event-label">Nikini Poya Pinkama</span>
+                    </div>
+                </div>
+
+                <div class="event-photo-slot" data-event-name="Binara poya pinkama">
+                    <div class="event-photo-preview-container">
+                        <img class="event-photo-preview" src="https://via.placeholder.com/300x160/004080/FFFFFF?text=Binara%20Poya%20Pinkama" alt="Binara Poya Pinkama Photo">
+                        <span class="event-label">Binara poya pinkama</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <h2>Gallery</h2>
+            <div id="gallery-filter-buttons">
+                <button class="filter-btn active" data-filter="all">Show All Photos</button>
+                <button class="filter-btn" data-filter="Esala Poya Pinkama">Esala Poya Pinkama</button>
+                <button class="filter-btn" data-filter="Nikini Poya Pinkama">Nikini Poya Pinkama</button>
+                <button class="filter-btn" data-filter="Binara poya pinkama">Binara poya pinkama</button>
+                <button class="filter-btn" data-filter="Other Events">Other Events</button>
+            </div>
+            <div class="gallery-grid" id="gallery-grid-container">
+                <div class="gallery-item" data-event-tags="Esala Poya Pinkama">
+                    <img src="c:\Users\denuw\OneDrive\Desktop\webimage" alt="Esala Poya Pinkama Gallery Photo 1" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Nikini Poya Pinkama">
+                    <img src="https://placehold.co/400x200/16a085/FFFFFF?text=Nikini%20Gallery%201" alt="Nikini Poya Pinkama Gallery Photo 1" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Binara poya pinkama">
+                    <img src="https://placehold.co/400x200/004080/FFFFFF?text=Binara%20Gallery%201" alt="Binara Poya Pinkama Gallery Photo 1" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Esala Poya Pinkama,Other Events">
+                    <img src="https://placehold.co/400x200/003366/FFFFFF?text=Esala%20Gallery%202" alt="Esala Poya Pinkama Gallery Photo 2" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Nikini Poya Pinkama,Other Events">
+                    <img src="https://placehold.co/400x200/16a085/FFFFFF?text=Nikini%20Gallery%202" alt="Nikini Poya Pinkama Gallery Photo 2" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Binara poya pinkama,Other Events">
+                    <img src="https://placehold.co/400x200/004080/FFFFFF?text=Binara%20Gallery%202" alt="Binara Poya Pinkama Gallery Photo 2" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Other Events">
+                    <img src="https://placehold.co/400x200/003366/FFFFFF?text=General%20Event%201" alt="General Event Gallery Photo 1" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-event-tags="Other Events">
+                    <img src="https://placehold.co/400x200/16a085/FFFFFF?text=General%20Event%202" alt="General Event Gallery Photo 2" class="gallery-img">
+                </div>
+                <div class="gallery-item add-photo-card">
+                    <i class="fas fa-plus-circle" style="font-size: 3rem; color: var(--primary-blue-medium);"></i>
+                    <span class="event-label" style="margin-top: 1rem;">More Photos Coming Soon!</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Address</h4>
+                    <p>Sri Salawanodyaramaya,</p>
+                    <p>Diyagama Road,</p>
+                    <p>Diyagama, Western Province,</p>
+                    <p>Sri Lanka</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p><a href="tel:+94112XXXXXX">+94 11 2XXXXXX</a></p>
+                    <p><a href="tel:+9477XXXXXXX">+94 77 XXXXXXX (Guild Coordinator)</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p><a href="mailto:info@dahampasala.lk">info@dahampasala.lk</a></p>
+                    <p><a href="mailto:prefectguild@dahampasala.lk">prefectguild@dahampasala.lk</a></p>
+                </div>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475.7486835847135!2d80.00018223580321!3d6.8022725457588065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24e0e67ebfd3f%3A0xe98fecfe2100521!2zU2FsYSBXYW5vZHlhcmFtYXlhIERpeWFnYW1hICjgt4Pgt4_gtr3gt4DgtrHgt5zgtq_gt4rigI3gtrrgt4_gtrvgt4_gtrjgtrop!5e1!3m2!1sen!2slk!4v1750060275899!5m2!1sen!2slk"
+                class="google-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Daham Pasala Prefect Guild. All rights reserved.<br> © Modiffied By Denuwan Sasmitha ( HP )</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- Gallery Filtering Logic ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('#gallery-grid-container .gallery-item');
+            const eventPhotoSlots = document.querySelectorAll('#events .event-photo-slot');
+            const filterButtons = document.querySelectorAll('#gallery-filter-buttons .filter-btn');
+
+            // Function to filter gallery items
+            function filterGallery(filterTag) {
+                galleryItems.forEach(item => {
+                    const tags = item.dataset.eventTags ? item.dataset.eventTags.split(',').map(tag => tag.trim()) : [];
+                    const isAddCard = item.classList.contains('add-photo-card');
+
+                    if (filterTag === 'all') {
+                        item.classList.remove('hidden');
+                    } else if (isAddCard) {
+                        item.classList.remove('hidden'); // Always show the 'More Photos' card
+                    }
+                    else if (tags.includes(filterTag)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                // Scroll to gallery after filtering
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Click listener for event photos (to filter gallery)
+            eventPhotoSlots.forEach(slot => {
+                slot.addEventListener('click', function() {
+                    const eventName = this.dataset.eventName;
+                    if (eventName) {
+                        filterGallery(eventName);
+
+                        // Update active state of filter buttons
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        const targetBtn = document.querySelector(`.filter-btn[data-filter="${eventName}"]`);
+                        if (targetBtn) {
+                            targetBtn.classList.add('active');
+                        }
+                    }
+                });
+            });
+
+            // Click listeners for filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    filterGallery(filter);
+
+                    // Update active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Ensure images start visible
+            filterGallery('all');
+        });
+
+        // Placeholder image URL updates with specific text (no upload/delete JS needed)
+        // This script block is intentionally empty as the previous upload/delete JS is removed.
+        // All photo references are now static in the HTML.
+    </script>
+</body>
+</html>
